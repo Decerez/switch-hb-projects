@@ -1,0 +1,33 @@
+program roguelike-nx
+
+design-ideas {
+
+top-menu:
+
+	0---------------------------------0
+	| >attack  inventory  pick up     |
+	0---------------------------------0
+	
+side-menu:
+	0---------0
+	| POTIONS |
+	0---------0
+	| HP   x1 |
+	| MANA x1 |
+	0---------0
+	
+side-menu2:
+
+	0---------0
+	|  STATS  |
+	0---------0
+	| HP      |
+	|   03/10 |
+	| MANA    |
+	|   15/65 |
+	0---------0
+
+notif-menu:
+
+	
+}
