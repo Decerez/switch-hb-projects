@@ -22,6 +22,9 @@ bool isMenuKey(u64 kDown){
 
 int main(int argc, char **argv)
 {
+
+
+
     /*
     char keysNames[32][32] = {
         "KEY_A", "KEY_B", "KEY_X", "KEY_Y",
@@ -34,17 +37,33 @@ int main(int argc, char **argv)
         "", "", "", ""
     };
     */
+
+    //Inventory Data
+    int invSize = 2;
+    char *items[2];
+    items[0] = "HLTH P";
+    items[1] = "MANA P";
+
+    u32 inventory[2] = {
+        12, 1
+    };
+    //
     
     u32 playerLocation[2] = {5,5};
     u32 oldPlayerLocation[2] = {playerLocation[0],playerLocation[1]};
     u32 kDownOld = 0;
     u32 menuSelection = 0;
+    u32 stats[4] = {10,8,20,18};
 
     gfxInitDefault();
     consoleInit(NULL);
 
     printNx("@",playerLocation[0],playerLocation[1]);
     printMenu(menuSelection);
+    printNotif("The barbarian strikes you for 12 damage");
+    printStats(stats);
+    printInventory(inventory, items, invSize);
+    printGameBorder();
 
     // Main loop
     while(appletMainLoop())
