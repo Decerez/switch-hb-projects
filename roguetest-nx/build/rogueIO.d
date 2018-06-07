@@ -59,7 +59,8 @@ rogueIO.o: C:/repos/switch-hb-projects/roguetest-nx/source/rogueIO.c \
  C:/devkitPro/libnx/include/switch/runtime/devices/fs_dev.h \
  C:/devkitPro/libnx/include/switch/runtime/devices/romfs_dev.h \
  C:/devkitPro/libnx/include/switch/runtime/devices/socket.h \
- C:/repos/switch-hb-projects/roguetest-nx/source/rogueIO.h
+ C:/repos/switch-hb-projects/roguetest-nx/source/rogueIO.h \
+ C:/repos/switch-hb-projects/roguetest-nx/source/perlin2d.h
 
 C:/devkitPro/libnx/include/switch.h:
 
@@ -182,3 +183,5 @@ C:/devkitPro/libnx/include/switch/runtime/devices/romfs_dev.h:
 C:/devkitPro/libnx/include/switch/runtime/devices/socket.h:
 
 C:/repos/switch-hb-projects/roguetest-nx/source/rogueIO.h:
+
+C:/repos/switch-hb-projects/roguetest-nx/source/perlin2d.h:

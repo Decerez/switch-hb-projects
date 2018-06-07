@@ -3,6 +3,7 @@
 
 #include <switch.h>
 #include "rogueIO.h"
+#include "perlin2d.h"
 
 void printNx(char *input, u32 r, u32 c){
     printf("\x1b[%d;%dH%s",r,c,input);
@@ -95,6 +96,29 @@ void printGameBorder(){
     drawBox(6,3,45-5,80-13);
     printNx("GAME WINDOW", 6,5);
 
+}
+
+//32 Rows, 62 Columns
+void printGameMap(){
+    u32 rs = 7, cs = 4;
+    u32 r, c;
+    float grad;
+    for(r = 0; r <= 32; r++){
+        for(c = 0; c <= 62; c++){
+            grad = perlin2d(c,r,0.2,4);
+            if(grad < 0.5){
+                printNx(CONSOLE_ESC(34;1m) "~",r+rs,c+cs);
+            } else  if(grad > 0.85){
+                printNx(CONSOLE_ESC(37;1m) "^",r+rs,c+cs);
+            } else  if(grad > 0.75){
+                printNx(CONSOLE_ESC(30;1m) "^",r+rs,c+cs);
+            /*} else if(grad < 0.55){
+                printNx(CONSOLE_ESC(33;1m) ",",r+rs,c+cs);*/
+            } else {
+                printNx(CONSOLE_ESC(32;1m) ".",r+rs,c+cs);
+            }
+        }
+    }
 }
 
 void printCharacter(u32 oldLocation[], u32 newLocation[]){

@@ -49,7 +49,7 @@ int main(int argc, char **argv)
     };
     //
     
-    u32 playerLocation[2] = {5,5};
+    u32 playerLocation[2] = {8,5};
     u32 oldPlayerLocation[2] = {playerLocation[0],playerLocation[1]};
     u32 kDownOld = 0;
     u32 menuSelection = 0;
@@ -64,6 +64,7 @@ int main(int argc, char **argv)
     printStats(stats);
     printInventory(inventory, items, invSize);
     printGameBorder();
+    printGameMap();
 
     // Main loop
     while(appletMainLoop())
@@ -84,23 +85,25 @@ int main(int argc, char **argv)
             //Clear console
             //consoleClear();
 
+
+
             if(kDown & KEY_DRIGHT){
-                if(playerLocation[1] != 79){
+                if(playerLocation[1] != 66){
                     playerLocation[1] += 1;
                 }
             }
             if(kDown & KEY_DLEFT){
-                if(playerLocation[1] != 1){
+                if(playerLocation[1] != 4){
                     playerLocation[1] -= 1;
                 }
             }
             if(kDown & KEY_DUP){
-                if(playerLocation[0] != 1){
+                if(playerLocation[0] != 7){
                     playerLocation[0] -= 1;
                 }
             }
             if(kDown & KEY_DDOWN){
-                if(playerLocation[0] != 44){
+                if(playerLocation[0] != 39){
                     playerLocation[0] += 1;
                 }
             }
